@@ -91,9 +91,9 @@ def getTeam(player):
         stat["team2"]["player5"].append(champID)  
 
     # Pull Player Levels
-    response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109",
+    response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658",
       headers={
-        "X-Mashape-Key": "cr1TQBbsvzmshKj7odQmhnN9xkFep149Dttjsnqs3Af4zb6rQH"
+        
       }
     )
     data = response.body

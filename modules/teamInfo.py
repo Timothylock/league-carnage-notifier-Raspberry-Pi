@@ -120,23 +120,23 @@ def getTeam(player):
     except:
       stat["team1"]["player5"].append(-999)
     try:
-      stat["team2"]["player1"].append(data[str(stat["team1"]["player1"][1])]["summonerLevel"])
+      stat["team2"]["player1"].append(data[str(stat["team2"]["player1"][1])]["summonerLevel"])
     except:
       stat["team2"]["player1"].append(-999)
     try:
-      stat["team2"]["player2"].append(data[str(stat["team1"]["player2"][1])]["summonerLevel"])
+      stat["team2"]["player2"].append(data[str(stat["team2"]["player2"][1])]["summonerLevel"])
     except:
       stat["team2"]["player2"].append(-999)
     try:
-      stat["team2"]["player3"].append(data[str(stat["team1"]["player3"][1])]["summonerLevel"])
+      stat["team2"]["player3"].append(data[str(stat["team2"]["player3"][1])]["summonerLevel"])
     except:
       stat["team2"]["player3"].append(-999)
     try:
-      stat["team2"]["player4"].append(data[str(stat["team1"]["player4"][1])]["summonerLevel"])
+      stat["team2"]["player4"].append(data[str(stat["team2"]["player4"][1])]["summonerLevel"])
     except:
       stat["team2"]["player4"].append(-999)
     try:
-      stat["team2"]["player5"].append(data[str(stat["team1"]["player5"][1])]["summonerLevel"])
+      stat["team2"]["player5"].append(data[str(stat["team2"]["player5"][1])]["summonerLevel"])
     except:
       stat["team2"]["player5"].append(-999)
     print("ready to write")

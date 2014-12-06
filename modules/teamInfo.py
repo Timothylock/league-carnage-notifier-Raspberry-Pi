@@ -49,12 +49,30 @@ def getTeam(player):
     stat["team2"]["player4"].append(data["data"]["game"]["teamTwo"][3]["accountId"])
     stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["accountId"])
 
+    # SummonerInternalName
+    # Reference for champion ID
+    stat["team1"]["player1"].append(data["data"]["game"]["teamOne"][0]["summonerInternalName"])
+    stat["team1"]["player2"].append(data["data"]["game"]["teamOne"][1]["summonerInternalName"])
+    stat["team1"]["player3"].append(data["data"]["game"]["teamOne"][2]["summonerInternalName"])
+    stat["team1"]["player4"].append(data["data"]["game"]["teamOne"][3]["summonerInternalName"])
+    stat["team1"]["player5"].append(data["data"]["game"]["teamOne"][4]["summonerInternalName"])
+    stat["team2"]["player1"].append(data["data"]["game"]["teamTwo"][0]["summonerInternalName"])
+    stat["team2"]["player2"].append(data["data"]["game"]["teamTwo"][1]["summonerInternalName"])
+    stat["team2"]["player3"].append(data["data"]["game"]["teamTwo"][2]["summonerInternalName"])
+    stat["team2"]["player4"].append(data["data"]["game"]["teamTwo"][3]["summonerInternalName"])
+    stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["summonerInternalName"])
     # Summoner champions
-    # This is a new dictionary, summoners listed randomly
     champs = {}
 
-    for n in data["data"]["game"]["playerChampionSelections"]:    
-        champs[n["summonerInternalName"]] = n["championId"]
+    for n in data["data"]["game"]["playerChampionSelections"]:
+    
+        internalname = n["summonerInternalName"]
+        champID = n["championId"]
+    
+        for team in stat:
+            for player in team:
+                if internalname in player:
+                    player.append(champID)
 
     # Pull Player Levels
     response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109",
@@ -104,7 +122,7 @@ def getTeam(player):
     try:
       stat["team2"]["player5"].append(data[str(stat["team1"]["player5"][1])]["summonerLevel"])
     except:
-      stat["team2"]["player45"].append(-999)
+      stat["team2"]["player5"].append(-999)
     print("ready to write")
     datasave.save(stat,"data/teaminfo.dat")
   else:

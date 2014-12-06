@@ -9,6 +9,6 @@ def getTeam(summonerID):
 
 def getFellowPlayers(response):
   for games in range(10):
-    for players in range(8):
+    for players in range(9):
       print(response["games"][games]["fellowPlayers"][players]["summonerId"])
   

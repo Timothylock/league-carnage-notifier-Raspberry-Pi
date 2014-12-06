@@ -91,7 +91,7 @@ def getTeam(player):
         stat["team2"]["player5"].append(champID)  
 
     # Pull Player Levels
-    response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109")
     data = response.body
     
     # Summonor Levels
@@ -138,7 +138,7 @@ def getTeam(player):
     print("ready to write")
     datasave.save(stat,"data/teaminfo.dat")
 
-    # Pull Champ Names
+        # Pull Champ Names
     response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team1"]["player1"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
     data = response.body
     stat["team1"]["player1"].append(data["name"])
@@ -154,6 +154,21 @@ def getTeam(player):
     response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team1"]["player5"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
     data = response.body
     stat["team1"]["player5"].append(data["name"])
+    response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team2"]["player1"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    data = response.body
+    stat["team2"]["player1"].append(data["name"])
+    response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team2"]["player2"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    data = response.body
+    stat["team2"]["player2"].append(data["name"])
+    response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team2"]["player3"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    data = response.body
+    stat["team2"]["player3"].append(data["name"])
+    response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team2"]["player4"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    data = response.body
+    stat["team2"]["player4"].append(data["name"])
+    response = unirest.get("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team2"]["player5"][2]) + "?api_key=409d8cdd-8129-4541-b34e-d7c61dee9658")
+    data = response.body
+    stat["team2"]["player5"].append(data["name"])   
 
   else:
     print("ready to write")

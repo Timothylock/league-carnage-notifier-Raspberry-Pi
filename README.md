@@ -2,4 +2,11 @@ league-carnage-notifier-Raspberry-Pi
 ====================================
 
 Required Install:
-pip install unirest
+====================================
+$ sudo apt-get install python-pip python-dev build-essential 
+
+$ sudo pip install --upgrade pip 
+
+$ sudo pip install --upgrade virtualenv 
+
+$ pip install unirest

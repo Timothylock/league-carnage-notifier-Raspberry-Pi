@@ -9,9 +9,9 @@ def show (stat):
 
     # Put the names into lists
     for i in range(5):
-        t1name.append(stat["team1"]["player" + str(i+1)][0])
+        t1name.append(stat["team1"]["player" + str(i+1)][5])
     for i in range(5):
-        t2name.append(stat["team2"]["player" + str(i+1)][0])
+        t2name.append(stat["team2"]["player" + str(i+1)][5])
 
     print(len(t2name[1]))
         

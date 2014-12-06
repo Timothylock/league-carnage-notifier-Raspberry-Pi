@@ -66,13 +66,14 @@ def getTeam(player):
 
     for n in data["data"]["game"]["playerChampionSelections"]:
     
-        internalname = n["summonerInternalName"]
-        champID = n["championId"]
+      internalname = n["summonerInternalName"]
+      champID = n["championId"]
     
-        for team in stat:
-            for player in team:
-                if internalname in player:
-                    player.append(champID)
+      for team in stat:
+          for player in team:           
+              if internalname in player:
+                  player.append(champID)
+                  player.remove(internalname)
 
     # Pull Player Levels
     response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109",

@@ -98,10 +98,10 @@ def getTeam(player):
       stat["team2"]["player5"].append(data[str(stat["team1"]["player5"][1])]["summonerLevel"])
     except:
       stat["team2"]["player45"].append(-999)
-
-    return(stat)
-  return(["nogame"])
-
-
+    print("ready to write")
+    datasave.save(stat,"data/teaminfo.dat")
+  else:
+    print("ready to write")
+    datasave.save(["nogame"],"data/teaminfo.dat")
 
 

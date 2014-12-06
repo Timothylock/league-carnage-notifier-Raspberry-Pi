@@ -1,16 +1,18 @@
-from modules import gameload
+from modules import teamInfo
 from modules.datasave import datasave
 import time
 
 #User Variables
-username = Commit
+username = "arexxk"
 
-gameload.getTeam(username)
+teamInfo.getTeam(username)
 
-start = datasave.read("modules/data/teaminfo.dat")
+start = datasave.read("data/teaminfo.dat")
+
 while start[0] == "nogame":
+    print("Player not in game / Game not observable")
     time.sleep(5) #time delay in seconds
-    gameload.getTeam(username)
-    start = datasave.read("modules/data/teaminfo.dat")
+    teamInfo.getTeam(username)
+    start = datasave.read("data/teaminfo.dat")
 
 print("Game has started")

@@ -41,13 +41,13 @@ def winOrLose(team1, team2):
   for player in range(len(player["Team1"])):
     name1.append(player["Team1"]["Player"+ str(player+1)][0])
     sId1.append(player["Team1"]["Player"+ str(player+1)][1])
-    cId1.append(player["Team1"]["Player"+ str(player+1)][2])
+    cId1.append(player["Team1"]["Player"+ str(player+1)][3])
     chmpName1.append(player["Team1"]["Player"+ str(player+1)][5])
     
   for player in range(len(player["Team2"])):
     name2.append(player["Team2"]["Player"+ str(player+1)][0])
     sID2.append(player["Team2"]["Player"+ str(player+1)][1])
-    cId2.append(player["Team2"]["Player"+ str(player+1)][2])
+    cId2.append(player["Team2"]["Player"+ str(player+1)][3])
     chmpName2.append(player["Team2"]["Player"+ str(player+1)][5])
 
   for summoner in range(len(sId1)):

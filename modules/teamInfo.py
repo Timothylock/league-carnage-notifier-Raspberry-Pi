@@ -49,6 +49,13 @@ def getTeam(player):
     stat["team2"]["player4"].append(data["data"]["game"]["teamTwo"][3]["accountId"])
     stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["accountId"])
 
+    # Summoner champions
+    # This is a new dictionary, summoners listed randomly
+    champs = {}
+
+    for n in data["data"]["game"]["playerChampionSelections"]:    
+        champs[n["summonerInternalName"]] = n["championId"]
+
     # Pull Player Levels
     response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109",
       headers={

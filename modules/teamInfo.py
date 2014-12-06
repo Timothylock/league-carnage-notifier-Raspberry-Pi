@@ -70,35 +70,25 @@ def getTeam(player):
       champID = data["data"]["game"]["playerChampionSelections"][x]["championId"]        
       
       if internalname in stat["team1"]["player1"]:      
-        stat["team1"]["player1"].append(champID)
-        stat["team1"]["player1"].remove(internalname)        
+        stat["team1"]["player1"].append(champID)      
       if internalname in stat["team1"]["player2"]:      
-        stat["team1"]["player2"].append(champID)
-        stat["team1"]["player2"].remove(internalname)          
+        stat["team1"]["player2"].append(champID)         
       if internalname in stat["team1"]["player3"]:      
-        stat["team1"]["player3"].append(champID)
-        stat["team1"]["player3"].remove(internalname)     
+        stat["team1"]["player3"].append(champID)    
       if internalname in stat["team1"]["player4"]:      
-        stat["team1"]["player4"].append(champID)
-        stat["team1"]["player4"].remove(internalname)        
+        stat["team1"]["player4"].append(champID)       
       if internalname in stat["team1"]["player5"]:      
-        stat["team1"]["player5"].append(champID)
-        stat["team1"]["player5"].remove(internalname)          
+        stat["team1"]["player5"].append(champID)         
       if internalname in stat["team2"]["player1"]:      
         stat["team2"]["player1"].append(champID)
-        stat["team2"]["player1"].remove(internalname)       
       if internalname in stat["team2"]["player2"]:      
         stat["team2"]["player2"].append(champID)
-        stat["team2"]["player2"].remove(internalname)        
       if internalname in stat["team2"]["player3"]:      
-        stat["team2"]["player3"].append(champID)
-        stat["team2"]["player3"].remove(internalname)          
+        stat["team2"]["player3"].append(champID)         
       if internalname in stat["team2"]["player4"]:      
         stat["team2"]["player4"].append(champID)
-        stat["team2"]["player4"].remove(internalname)
       if internalname in stat["team2"]["player5"]:      
-        stat["team2"]["player5"].append(champID)
-        stat["team2"]["player5"].remove(internalname)    
+        stat["team2"]["player5"].append(champID)  
 
     # Pull Player Levels
     response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + str(stat["team1"]["player1"][1]) + ","  + str(stat["team1"]["player2"][1]) + ","  + str(stat["team1"]["player3"][1]) + ","  + str(stat["team1"]["player4"][1]) + ","  + str(stat["team1"]["player5"][1]) + ","  + str(stat["team2"]["player1"][1]) + ","  + str(stat["team2"]["player2"][1]) + ","  + str(stat["team2"]["player3"][1]) + ","  + str(stat["team2"]["player4"][1]) + ","  + str(stat["team2"]["player5"][1]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109",

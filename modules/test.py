@@ -1,44 +1,121 @@
 import unirest
+from datasave import datasave
 
-def getTeam(summonerID):
+def getInfo(summonerID):
   response = unirest.get("https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/" + str(summonerID) + "/recent?api_key=4ef4ddb0-44e4-4757-8cd5-6aa9f512a813",
     headers={
     }
   )
   return(response.body)
-
-def winOrLose(championsID, response):
-  wlRatio = 0
-  kdRatio = 0
-  gamesWon = 0
-  gamesLoss = 0
-  numKills = 0
-  numDeaths = 0
-  for games in range(10):
-    if championsID == response["games"][games]["championId"]:
-      numKills += response["games"][games]["stats"]["championsKilled"]
-      numDeaths += (response["games"][games]["stats"]["numDeaths"])
-      if response["games"][games]["stats"]["win"] == "true":
-        gamesWon += 1
-      if response["games"][games]["stats"]["win"] == "false":
-        gamesLoss += 1
-        
-  if gamesLoss > 0:
-    wlRatio = gamesWon/gamesLoss
-  else:
-    wlRatio = gamesWon
   
-  if numDeaths > 0:
-    kdRatio = numKills/numDeaths
-  else:
-    kdRatio = numKills
+def winOrLose(team1, team2):
+  wlRatio1 = []
+  kdRatio1 = []
+  gamesWon1 = 0
+  gamesLoss1 = 0
+  numKills1 = 0
+  numDeaths1 = 0
+  avgwl1 = 0
+  avgkd1 = 0
+  
+  wlRatio2 = 0
+  kdRatio2 = 0
+  gamesWon2 = 0
+  gamesLoss2 = 0
+  numKills2 = 0
+  numDeaths2 = 0
+  avgwl2 = 0
+  avgkd2 = 0
 
-  if gamesWon > 0:
-    print("W/L Ratio: " + wlRatio)
-  else:
-    print("Unable to calculate W/L Ratio")
+  players = datasave.read("data/teaminfo.dat")
+  name1 = []
+  sId1 = []
+  cId1 = []
+  chmpName1 = []
+
+  name2 = []
+  sID2 = []
+  cId2 = []
+  chmpName2 = []
+
+  for player in range(len(player["Team1"])):
+    name1.append(player["Team1"]["Player"+ str(player+1)][0])
+    sId1.append(player["Team1"]["Player"+ str(player+1)][1])
+    cId1.append(player["Team1"]["Player"+ str(player+1)][2])
+    chmpName1.append(player["Team1"]["Player"+ str(player+1)][5])
     
-  if numKills > 0:
-    print("K/D Ratio: " +kdRatio)
-  else:
-    print("Unable to calculate K/D Ratio")
+  for player in range(len(player["Team2"])):
+    name2.append(player["Team2"]["Player"+ str(player+1)][0])
+    sID2.append(player["Team2"]["Player"+ str(player+1)][1])
+    cId2.append(player["Team2"]["Player"+ str(player+1)][2])
+    chmpName2.append(player["Team2"]["Player"+ str(player+1)][5])
+
+  for summoner in range(len(sId1)):
+    response = getInfo(sId1[summoner])
+    for games in range(len(response["games"]):
+      if cId1[summoner] == response["games"][games]["championId"]:
+        numKills1 += response["games"][games]["stats"]["championsKilled"]
+        numDeaths1 += response["games"][games]["stats"]["numDeaths"]
+        if response["games"][games]["stats"]["win"] == "true":
+          gamesWon1 += 1
+        if response["games"][games]["stats"]["win"] == "false":
+          gamesLoss1 += 1
+    try:
+      wlRatio1.append(gamesWon1/gamesLoss1)
+    except:
+      wlRatio1.append(gamesWon1)
+
+    try:
+      kdRatio1.append(numKills1/numDeaths1)
+    except:
+      kdRatio1.append(numKills1)
+      
+  for summoner in range(len(sId2)):
+    response = getInfo(sId2[summoner])
+    for games in range(len(response["games"]):
+      if cId2[summoner] == response["games"][games]["championId"]:
+        numKills2 += response["games"][games]["stats"]["championsKilled"]
+        numDeaths2 += response["games"][games]["stats"]["numDeaths"]
+        if response["games"][games]["stats"]["win"] == "true":
+          gamesWon2 += 1
+        if response["games"][games]["stats"]["win"] == "false":
+          gamesLoss2 += 1
+    try:
+      wlRatio2.append(gamesWon1/gamesLoss1)
+    except:
+      wlRatio2.append(gamesWon1)
+
+    try:
+      kdRatio2.append(numKills1/numDeaths1)
+    except:
+      kdRatio2.append(numKills1)
+
+
+  for ratio in wlRatio1:
+    wl1 += ratio
+  avgwl1 = wl1/(len(wlRatio1))
+
+  for ratio in kdRatio1:
+    kd1 += ratio
+  avgkd1 = kd1/(len(kdRatio1))                   
+
+  for ratio in wlRatio2:
+    wl2 += ratio
+  avgwl2 = wl2/(len(wlRatio2))
+
+  for ratio in kdRatio2:
+    kd2 += ratio
+  avgkd2 = kd2/(len(kdRatio2))
+                       
+  if avgwl1 < avgwl2 and avgkd1 < avgkd2:
+    print("Team 2 will most likely win")
+
+  if avgwl2 < avgwl1 and avgkd2 < avgkd1:
+    print("Team 1 will most likely win")
+
+  highestkd1 = kdRatio1.index(max(kdRatio1))
+  highestkd2 = kdRatio2.index(max(kdRatio2))
+
+  print("Player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat")
+  print("Player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat")                     
+                       

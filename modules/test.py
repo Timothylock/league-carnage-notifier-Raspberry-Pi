@@ -7,8 +7,38 @@ def getTeam(summonerID):
   )
   return(response.body)
 
-def getFellowPlayers(response):
+def winOrLose(championsID, response):
+  wlRatio = 0
+  kdRatio = 0
+  gamesWon = 0
+  gamesLoss = 0
+  numKills = 0
+  numDeaths = 0
   for games in range(10):
-    for players in range(9):
-      print(response["games"][games]["fellowPlayers"][players]["summonerId"])
+    if championsID == response["games"][games]["championId"]:
+      numKills += response["games"][games]["stats"]["championsKilled"]
+      numDeaths += (response["games"][games]["stats"]["numDeaths"])
+      if response["games"][games]["stats"]["win"] == "true":
+        gamesWon += 1
+      if response["games"][games]["stats"]["win"] == "false":
+        gamesLoss += 1
+        
+  if gamesLoss > 0:
+    wlRatio = gamesWon/gamesLoss
+  else:
+    wlRatio = gamesWon
   
+  if numDeaths > 0:
+    kdRatio = numKills/numDeaths
+  else:
+    kdRatio = numKills
+
+  if gamesWon > 0:
+    print("W/L Ratio: " + wlRatio)
+  else:
+    print("Unable to calculate W/L Ratio")
+    
+  if numKills > 0:
+    print("K/D Ratio: " +kdRatio)
+  else:
+    print("Unable to calculate K/D Ratio")

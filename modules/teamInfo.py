@@ -38,16 +38,16 @@ def getTeam(player):
     stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["summonerName"])
 
     # Summoner Acc ID
-    stat["team1"]["player1"].append(data["data"]["game"]["teamOne"][0]["accountId"])
-    stat["team1"]["player2"].append(data["data"]["game"]["teamOne"][1]["accountId"])
-    stat["team1"]["player3"].append(data["data"]["game"]["teamOne"][2]["accountId"])
-    stat["team1"]["player4"].append(data["data"]["game"]["teamOne"][3]["accountId"])
-    stat["team1"]["player5"].append(data["data"]["game"]["teamOne"][4]["accountId"])
-    stat["team2"]["player1"].append(data["data"]["game"]["teamTwo"][0]["accountId"])
-    stat["team2"]["player2"].append(data["data"]["game"]["teamTwo"][1]["accountId"])
-    stat["team2"]["player3"].append(data["data"]["game"]["teamTwo"][2]["accountId"])
-    stat["team2"]["player4"].append(data["data"]["game"]["teamTwo"][3]["accountId"])
-    stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["accountId"])
+    stat["team1"]["player1"].append(data["data"]["game"]["teamOne"][0]["summonerId"])
+    stat["team1"]["player2"].append(data["data"]["game"]["teamOne"][1]["summonerId"])
+    stat["team1"]["player3"].append(data["data"]["game"]["teamOne"][2]["summonerId"])
+    stat["team1"]["player4"].append(data["data"]["game"]["teamOne"][3]["summonerId"])
+    stat["team1"]["player5"].append(data["data"]["game"]["teamOne"][4]["summonerId"])
+    stat["team2"]["player1"].append(data["data"]["game"]["teamTwo"][0]["summonerId"])
+    stat["team2"]["player2"].append(data["data"]["game"]["teamTwo"][1]["summonerId"])
+    stat["team2"]["player3"].append(data["data"]["game"]["teamTwo"][2]["summonerId"])
+    stat["team2"]["player4"].append(data["data"]["game"]["teamTwo"][3]["summonerId"])
+    stat["team2"]["player5"].append(data["data"]["game"]["teamTwo"][4]["summonerId"])
 
     # SummonerInternalName
     # Reference for champion ID

@@ -1,0 +1,6 @@
+import time
+start = datasave.readC("modules/data/teaminfo.dat")
+while start[0] != "nogame":
+    # keep calling a specific function
+    
+    time.sleep(5) #time delay in seconds

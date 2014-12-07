@@ -17,15 +17,19 @@ def winOrLose():
   numDeaths1 = 0
   avgwl1 = 0
   avgkd1 = 0
+  wl1 = 0
+  kd1 = 0
   
-  wlRatio2 = 0
-  kdRatio2 = 0
+  wlRatio2 = []
+  kdRatio2 = []
   gamesWon2 = 0
   gamesLoss2 = 0
   numKills2 = 0
   numDeaths2 = 0
   avgwl2 = 0
   avgkd2 = 0
+  wl2 = 0
+  kd2 = 0
 
   players = datasave.read("data/teaminfo.dat")
   name1 = []
@@ -34,7 +38,7 @@ def winOrLose():
   chmpName1 = []
 
   name2 = []
-  sID2 = []
+  sId2 = []
   cId2 = []
   chmpName2 = []
 
@@ -46,7 +50,7 @@ def winOrLose():
     
   for player in range(len(players["team2"])):
     name2.append(players["team2"]["player"+ str(player+1)][0])
-    sID2.append(players["team2"]["player"+ str(player+1)][1])
+    sId2.append(players["team2"]["player"+ str(player+1)][1])
     cId2.append(players["team2"]["player"+ str(player+1)][3])
     chmpName2.append(players["team2"]["player"+ str(player+1)][5])
 
@@ -54,7 +58,7 @@ def winOrLose():
     response = getInfo(sId1[summoner])
     for games in range(len(response["games"])):
       if cId1[summoner] == response["games"][games]["championId"]:
-        numKills1 += response["games"][games]["stats"]["championsKilled"]
+        #numKills1 += response["games"][games]["stats"]["championsKilled"]
         numDeaths1 += response["games"][games]["stats"]["numDeaths"]
         if response["games"][games]["stats"]["win"] == "true":
           gamesWon1 += 1

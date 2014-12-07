@@ -60,9 +60,9 @@ def winOrLose():
       if cId1[summoner] == response["games"][games]["championId"]:
         #numKills1 += response["games"][games]["stats"]["championsKilled"]
         numDeaths1 += response["games"][games]["stats"]["numDeaths"]
-        if response["games"][games]["stats"]["win"] == "true":
+        if response["games"][games]["stats"]["win"] == True:
           gamesWon1 += 1
-        if response["games"][games]["stats"]["win"] == "false":
+        if response["games"][games]["stats"]["win"] == False:
           gamesLoss1 += 1
     try:
       wlRatio1.append(gamesWon1/gamesLoss1)
@@ -80,9 +80,9 @@ def winOrLose():
       if cId2[summoner] == response["games"][games]["championId"]:
         numKills2 += response["games"][games]["stats"]["championsKilled"]
         numDeaths2 += response["games"][games]["stats"]["numDeaths"]
-        if response["games"][games]["stats"]["win"] == "true":
+        if response["games"][games]["stats"]["win"] == True:
           gamesWon2 += 1
-        if response["games"][games]["stats"]["win"] == "false":
+        if response["games"][games]["stats"]["win"] == False:
           gamesLoss2 += 1
     try:
       wlRatio2.append(gamesWon2/gamesLoss2)

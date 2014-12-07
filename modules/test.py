@@ -64,14 +64,14 @@ def winOrLose():
           gamesWon1 += 1
         if response["games"][games]["stats"]["win"] == False:
           gamesLoss1 += 1
-    try:
+    if gamesLoss1 > 0:
       wlRatio1.append(gamesWon1/gamesLoss1)
-    except:
+    else:
       wlRatio1.append(gamesWon1)
 
-    try:
+    if numDeaths1 > 0:
       kdRatio1.append(numKills1/numDeaths1)
-    except:
+    else:
       kdRatio1.append(numKills1)
       
   for summoner in range(len(sId2)):
@@ -84,14 +84,14 @@ def winOrLose():
           gamesWon2 += 1
         if response["games"][games]["stats"]["win"] == False:
           gamesLoss2 += 1
-    try:
+    if gamesLoss2 > 0:
       wlRatio2.append(gamesWon2/gamesLoss2)
-    except:
+    else:
       wlRatio2.append(gamesWon2)
 
-    try:
+    if numDeaths2 > 0:
       kdRatio2.append(numKills2/numDeaths2)
-    except:
+    else:
       kdRatio2.append(numKills2)
 
 
@@ -113,8 +113,14 @@ def winOrLose():
                        
   if avgwl1 < avgwl2 and avgkd1 < avgkd2:
     print("team 2 will most likely win")
+  
+  if avgwl1 < avgwl2 and avgkd1 > avgkd2:
+    print("team 2 has a chance of winning")
 
-  if avgwl2 < avgwl1 and avgkd2 < avgkd1:
+  if avgwl1 > avgwl2 and avgkd1 < avgkd2:
+    print("team 1 has a chance of winning")
+  
+  if avgwl1 > avgwl2 and avgkd1 > avgkd2:
     print("team 1 will most likely win")
 
   highestkd1 = kdRatio1.index(max(kdRatio1))

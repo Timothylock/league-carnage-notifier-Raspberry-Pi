@@ -8,7 +8,7 @@ def getInfo(summonerID):
   )
   return(response.body)
   
-def winOrLose(team1, team2):
+def winOrLose():
   wlRatio1 = []
   kdRatio1 = []
   gamesWon1 = 0
@@ -38,21 +38,21 @@ def winOrLose(team1, team2):
   cId2 = []
   chmpName2 = []
 
-  for player in range(len(player["Team1"])):
-    name1.append(player["Team1"]["Player"+ str(player+1)][0])
-    sId1.append(player["Team1"]["Player"+ str(player+1)][1])
-    cId1.append(player["Team1"]["Player"+ str(player+1)][3])
-    chmpName1.append(player["Team1"]["Player"+ str(player+1)][5])
+  for player in range(len(players["team1"])):
+    name1.append(players["team1"]["player"+ str(player+1)][0])
+    sId1.append(players["team1"]["player"+ str(player+1)][1])
+    cId1.append(players["team1"]["player"+ str(player+1)][3])
+    chmpName1.append(players["team1"]["player"+ str(player+1)][5])
     
-  for player in range(len(player["Team2"])):
-    name2.append(player["Team2"]["Player"+ str(player+1)][0])
-    sID2.append(player["Team2"]["Player"+ str(player+1)][1])
-    cId2.append(player["Team2"]["Player"+ str(player+1)][3])
-    chmpName2.append(player["Team2"]["Player"+ str(player+1)][5])
+  for player in range(len(players["team2"])):
+    name2.append(players["team2"]["player"+ str(player+1)][0])
+    sID2.append(players["team2"]["player"+ str(player+1)][1])
+    cId2.append(players["team2"]["player"+ str(player+1)][3])
+    chmpName2.append(players["team2"]["player"+ str(player+1)][5])
 
   for summoner in range(len(sId1)):
     response = getInfo(sId1[summoner])
-    for games in range(len(response["games"]):
+    for games in range(len(response["games"])):
       if cId1[summoner] == response["games"][games]["championId"]:
         numKills1 += response["games"][games]["stats"]["championsKilled"]
         numDeaths1 += response["games"][games]["stats"]["numDeaths"]
@@ -72,7 +72,7 @@ def winOrLose(team1, team2):
       
   for summoner in range(len(sId2)):
     response = getInfo(sId2[summoner])
-    for games in range(len(response["games"]):
+    for games in range(len(response["games"])):
       if cId2[summoner] == response["games"][games]["championId"]:
         numKills2 += response["games"][games]["stats"]["championsKilled"]
         numDeaths2 += response["games"][games]["stats"]["numDeaths"]
@@ -108,14 +108,16 @@ def winOrLose(team1, team2):
   avgkd2 = kd2/(len(kdRatio2))
                        
   if avgwl1 < avgwl2 and avgkd1 < avgkd2:
-    print("Team 2 will most likely win")
+    print("team 2 will most likely win")
 
   if avgwl2 < avgwl1 and avgkd2 < avgkd1:
-    print("Team 1 will most likely win")
+    print("team 1 will most likely win")
 
   highestkd1 = kdRatio1.index(max(kdRatio1))
   highestkd2 = kdRatio2.index(max(kdRatio2))
 
-  print("Player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat")
-  print("Player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat")                     
+  print("player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat")
+  print("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat")     
+
+winOrLose()                
                        

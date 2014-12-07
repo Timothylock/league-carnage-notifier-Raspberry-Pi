@@ -81,14 +81,14 @@ def winOrLose():
         if response["games"][games]["stats"]["win"] == "false":
           gamesLoss2 += 1
     try:
-      wlRatio2.append(gamesWon1/gamesLoss1)
+      wlRatio2.append(gamesWon2/gamesLoss2)
     except:
-      wlRatio2.append(gamesWon1)
+      wlRatio2.append(gamesWon2)
 
     try:
-      kdRatio2.append(numKills1/numDeaths1)
+      kdRatio2.append(numKills2/numDeaths2)
     except:
-      kdRatio2.append(numKills1)
+      kdRatio2.append(numKills2)
 
 
   for ratio in wlRatio1:

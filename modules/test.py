@@ -8,7 +8,7 @@ def getInfo(summonerID):
   )
   return(response.body)
   
-def winOrLose():
+def winOrLose(stats):
   wlRatio1 = []
   kdRatio1 = []
   gamesWon1 = 0
@@ -31,7 +31,7 @@ def winOrLose():
   wl2 = 0
   kd2 = 0
 
-  players = datasave.read("data/teaminfo.dat")
+  players = stats
   name1 = []
   sId1 = []
   cId1 = []
@@ -58,7 +58,7 @@ def winOrLose():
     response = getInfo(sId1[summoner])
     for games in range(len(response["games"])):
       if cId1[summoner] == response["games"][games]["championId"]:
-        #numKills1 += response["games"][games]["stats"]["championsKilled"]
+        numKills1 += response["games"][games]["stats"]["championsKilled"]
         numDeaths1 += response["games"][games]["stats"]["numDeaths"]
         if response["games"][games]["stats"]["win"] == True:
           gamesWon1 += 1
@@ -127,7 +127,8 @@ def winOrLose():
   highestkd2 = kdRatio2.index(max(kdRatio2))
 
   print("player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat")
-  print("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat")     
+  print("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat") 
+  return(("player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat"),("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat"))
 
 winOrLose()                
                        

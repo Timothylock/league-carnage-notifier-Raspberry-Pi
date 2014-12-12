@@ -1,7 +1,7 @@
 from speech import tts
 import time
 import os
-#from disp import disp
+from disp import disp
 
 def show (stat):
     t1name = []
@@ -41,7 +41,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -50,7 +50,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -60,7 +60,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -71,7 +71,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -82,7 +82,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
         
@@ -93,7 +93,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -104,7 +104,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -115,7 +115,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -126,7 +126,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -137,7 +137,7 @@ def show (stat):
         print (line2)
         print (line3)
         print (line4)
-	#disp.display(line1,line2,line3,line4)
+	disp.display(line1,line2,line3,line4)
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 

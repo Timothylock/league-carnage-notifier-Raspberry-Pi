@@ -58,8 +58,8 @@ def winOrLose(stats):
     response = getInfo(sId1[summoner])
     for games in range(len(response["games"])):
       if cId1[summoner] == response["games"][games]["championId"]:
-        numKills1 += response["games"][games]["stats"]["championsKilled"]
-        numDeaths1 += response["games"][games]["stats"]["numDeaths"]
+        #numKills1 += response["games"][games]["stats"]["championsKilled"]
+        #numDeaths1 += response["games"][games]["stats"]["numDeaths"]
         if response["games"][games]["stats"]["win"] == True:
           gamesWon1 += 1
         if response["games"][games]["stats"]["win"] == False:
@@ -78,8 +78,8 @@ def winOrLose(stats):
     response = getInfo(sId2[summoner])
     for games in range(len(response["games"])):
       if cId2[summoner] == response["games"][games]["championId"]:
-        numKills2 += response["games"][games]["stats"]["championsKilled"]
-        numDeaths2 += response["games"][games]["stats"]["numDeaths"]
+        #numKills2 += response["games"][games]["stats"]["championsKilled"]
+        #numDeaths2 += response["games"][games]["stats"]["numDeaths"]
         if response["games"][games]["stats"]["win"] == True:
           gamesWon2 += 1
         if response["games"][games]["stats"]["win"] == False:
@@ -130,5 +130,5 @@ def winOrLose(stats):
   print("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat") 
   return(("player: " +name1[highestkd1]+ " playing " + chmpName1[highestkd1] + " on team 1 is the highest threat"),("player: " +name2[highestkd2]+ " playing " + chmpName2[highestkd2] + " on team 2 is the highest threat"))
 
-winOrLose()                
+               
                        

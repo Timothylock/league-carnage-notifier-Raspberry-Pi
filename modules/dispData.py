@@ -55,7 +55,7 @@ def show (stat):
         os.system('cls' if os.name == 'nt' else 'clear')
 
 	line3 = "  Team 1    Team 2  "
-        line4 = t1name[0] + " " + str(stat["team1"]["player3"][3]) + " " + t2name[0] + " " + str(stat["team2"]["player3"][3])
+        line4 = t1name[0] + " " + str(stat["team1"]["player3"][4]) + " " + t2name[0] + " " + str(stat["team2"]["player3"][4])
         print (line1)
         print (line2)
         print (line3)
@@ -65,8 +65,8 @@ def show (stat):
         os.system('cls' if os.name == 'nt' else 'clear')
 
 	line2 = "  Team 1    Team 2  "
-        line3 = t1name[0] + " " + str(stat["team1"]["player2"][3]) + " " + t2name[0] + " " + str(stat["team2"]["player2"][3])
-        line4 = t1name[1] + " " + str(stat["team1"]["player3"][3]) + " " + t2name[1] + " " + str(stat["team2"]["player3"][3])
+        line3 = t1name[0] + " " + str(stat["team1"]["player2"][4]) + " " + t2name[0] + " " + str(stat["team2"]["player2"][4])
+        line4 = t1name[1] + " " + str(stat["team1"]["player3"][4]) + " " + t2name[1] + " " + str(stat["team2"]["player3"][4])
         print (line1)
         print (line2)
         print (line3)
@@ -75,9 +75,9 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        line2 = t1name[0] + " " + str(stat["team1"]["player1"][3]) + " " + t2name[0] + " " + str(stat["team2"]["player1"][3])
-        line3 = t1name[1] + " " + str(stat["team1"]["player2"][3]) + " " + t2name[1] + " " + str(stat["team2"]["player2"][3])
-        line4 = t1name[2] + " " + str(stat["team1"]["player3"][3]) + " " + t2name[2] + " " + str(stat["team2"]["player3"][3])
+        line2 = t1name[0] + " " + str(stat["team1"]["player1"][4]) + " " + t2name[0] + " " + str(stat["team2"]["player1"][4])
+        line3 = t1name[1] + " " + str(stat["team1"]["player2"][4]) + " " + t2name[1] + " " + str(stat["team2"]["player2"][4])
+        line4 = t1name[2] + " " + str(stat["team1"]["player3"][4]) + " " + t2name[2] + " " + str(stat["team2"]["player3"][4])
         print (line1)
         print (line2)
         print (line3)
@@ -86,9 +86,9 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
         
-        line2 = t1name[1] + " " + str(stat["team1"]["player1"][3]) + " " + t2name[1] + " " + str(stat["team2"]["player1"][3])
-        line3 = t1name[2] + " " + str(stat["team1"]["player2"][3]) + " " + t2name[2] + " " + str(stat["team2"]["player2"][3])
-        line4 = t1name[3] + " " + str(stat["team1"]["player3"][3]) + " " + t2name[3] + " " + str(stat["team2"]["player3"][3])
+        line2 = t1name[1] + " " + str(stat["team1"]["player1"][4]) + " " + t2name[1] + " " + str(stat["team2"]["player1"][4])
+        line3 = t1name[2] + " " + str(stat["team1"]["player2"][4]) + " " + t2name[2] + " " + str(stat["team2"]["player2"][4])
+        line4 = t1name[3] + " " + str(stat["team1"]["player3"][4]) + " " + t2name[3] + " " + str(stat["team2"]["player3"][4])
         print (line1)
         print (line2)
         print (line3)
@@ -97,9 +97,9 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        line2 = t1name[2] + " " + str(stat["team1"]["player1"][3]) + " " + t2name[2] + " " + str(stat["team2"]["player1"][3])
-        line3 = t1name[3] + " " + str(stat["team1"]["player2"][3]) + " " + t2nfame[3] + " " + str(stat["team2"]["player2"][3])
-        line4 = t1name[4] + " " + str(stat["team1"]["player3"][3]) + " " + t2name[4] + " " + str(stat["team2"]["player3"][3])
+        line2 = t1name[2] + " " + str(stat["team1"]["player1"][4]) + " " + t2name[2] + " " + str(stat["team2"]["player1"][4])
+        line3 = t1name[3] + " " + str(stat["team1"]["player2"][4]) + " " + t2name[3] + " " + str(stat["team2"]["player2"][4])
+        line4 = t1name[4] + " " + str(stat["team1"]["player3"][4]) + " " + t2name[4] + " " + str(stat["team2"]["player3"][4])
         print (line1)
         print (line2)
         print (line3)
@@ -108,8 +108,8 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        line2 = t1name[3] + " " + str(stat["team1"]["player1"][3]) + " " + t2name[3] + " " + str(stat["team2"]["player1"][3])
-        line3 = t1name[4] + " " + str(stat["team1"]["player2"][3]) + " " + t2name[4] + " " + str(stat["team2"]["player2"][3])
+        line2 = t1name[3] + " " + str(stat["team1"]["player1"][4]) + " " + t2name[3] + " " + str(stat["team2"]["player1"][4])
+        line3 = t1name[4] + " " + str(stat["team1"]["player2"][4]) + " " + t2name[4] + " " + str(stat["team2"]["player2"][4])
         line4 = "                     "
         print (line1)
         print (line2)
@@ -119,7 +119,7 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        line2 = t1name[4] + " " + str(stat["team1"]["player1"][3]) + " " + t2name[4] + " " + str(stat["team2"]["player1"][3])
+        line2 = t1name[4] + " " + str(stat["team1"]["player1"][4]) + " " + t2name[4] + " " + str(stat["team2"]["player1"][4])
         line3 = "                     "
         line4 = "                     "
         print (line1)
@@ -141,6 +141,3 @@ def show (stat):
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
 
-stat = {"team1": {"player2": ["Alamat", 221428992, 81, 15], "player3": ["ApertureMesa99", 202940806, 412, 15], "player1": ["Frostylicious", 207528603, 91, 15], "player4": ["Psychonaughtzi", 214408862, 102, 15], "player5": ["Holyhuntman", 212609674, 121, 15]}, "team2": {"player2": ["SnuggleBreeches", 212062433, 161, 15], "player3": ["StormTheSorrow", 213262599, 37, 15], "player1": ["Swobbin", 220913135, 236, 15], "player4": ["Carlious", 49871360, 107, 15], "player5": ["mobster123", 38986305, 19, 15]}}
-
-show(stat)

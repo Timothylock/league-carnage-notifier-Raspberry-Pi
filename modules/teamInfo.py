@@ -138,8 +138,6 @@ def getTeam(player):
       stat["team2"]["player5"].append(data[str(stat["team2"]["player5"][1])]["summonerLevel"])
     except:
       stat["team2"]["player5"].append(-999)
-    print("ready to write")
-    datasave.save(stat,"data/teaminfo.dat")
 
        # Pull Champ Names
     baseurl = "https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion/" + str(stat["team1"]["player1"][3]) + "?api_key=d688cd48-fc0d-4cb5-b22b-7a376be8a109"
@@ -183,8 +181,10 @@ def getTeam(player):
     data = json.loads(result)
     stat["team2"]["player5"].append(data["name"])
 
+    print("ready to write")
+    datasave.save(stat,"data/teaminfo.dat")
+
   else:
     print("ready to write")
     datasave.save(["nogame"],"data/teaminfo.dat")
 
-getTeam("cupofwater")
